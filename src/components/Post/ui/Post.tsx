@@ -1,5 +1,6 @@
 import type { IPost } from '@/interfaces';
 import styles from './style.module.css';
+import { Link } from 'react-router-dom';
 
 interface Props {
   post: IPost;
@@ -14,6 +15,7 @@ const Post = ({ post }: Props) => {
       <section className={styles.info}>
         <p>{post.body}</p>
       </section>
+      <Link to={`posts/${post.id}`}>Read more..</Link>
     </article>
   );
 };
