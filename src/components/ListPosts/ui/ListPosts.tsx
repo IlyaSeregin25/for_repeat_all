@@ -1,15 +1,14 @@
-import type { TListPosts } from '@/interfaces';
 import { Post } from '@/components/Post';
 import styles from './style.module.css';
+import { useAppSelector } from '@/store/store';
 
-interface Props {
-  data: TListPosts;
-}
+const ListPosts = () => {
+  const posts = useAppSelector(state => state.posts.posts);
+  console.log(posts);
 
-const ListPosts = ({ data }: Props) => {
   return (
     <ul className={styles.list}>
-      {data.map(post => {
+      {posts.map(post => {
         return (
           <li key={post.id}>
             <Post post={post} />
