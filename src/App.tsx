@@ -2,12 +2,12 @@ import './App.css';
 import { Footer } from './components/Footer';
 import { Main } from './components/Main';
 import { Header } from './components/Header';
-import { useEffect } from 'react';
+/* import { useEffect } from 'react';
 import { useAppDispatch } from './store/store';
-import { getPosts } from './store/slices/postsSlice';
+import { getPosts } from './store/slices/postsSlice'; */
 
 const App = () => {
-  const dispatch = useAppDispatch();
+  /*   const dispatch = useAppDispatch();
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/posts')
@@ -15,7 +15,7 @@ const App = () => {
       .then(json => {
         dispatch(getPosts(json));
       });
-  }, []);
+  }, []); */
 
   return (
     <div className="app">
