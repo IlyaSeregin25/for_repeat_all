@@ -4,10 +4,12 @@ import type { TListPosts } from '@/interfaces';
 
 interface IState {
   posts: TListPosts | [];
+  filter: string;
 }
 
 const initialState: IState = {
   posts: [],
+  filter: '',
 };
 
 export const postsSlice = createSlice({
@@ -17,9 +19,12 @@ export const postsSlice = createSlice({
     getPosts: (state, action: PayloadAction<TListPosts>) => {
       state.posts = action.payload;
     },
+    getFilter: (state, action: PayloadAction<string>) => {
+      state.filter = action.payload;
+    },
   },
 });
 
-export const { getPosts } = postsSlice.actions;
+export const { getPosts, getFilter } = postsSlice.actions;
 
 export default postsSlice.reducer;
