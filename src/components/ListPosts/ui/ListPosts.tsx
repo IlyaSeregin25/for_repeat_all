@@ -1,10 +1,12 @@
 import { Post } from '@/components/Post';
 import styles from './style.module.css';
-import { useGetPostsFromRTKQuery } from '@/store/services/postsApi';
+import type { TListPosts } from '@/interfaces';
 
-const ListPosts = () => {
-  const { data /* error, isLoading */ } = useGetPostsFromRTKQuery(null);
+interface Props {
+  data: TListPosts | undefined;
+}
 
+const ListPosts = ({ data }: Props) => {
   return (
     <ul className={styles.list}>
       {data?.map(post => {
