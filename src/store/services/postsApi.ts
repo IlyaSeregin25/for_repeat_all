@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import type { TListPosts } from '@/interfaces';
+import type { IPost, TListPosts } from '@/interfaces';
 
 export const postsApi = createApi({
   reducerPath: 'postsRTK',
@@ -9,7 +9,10 @@ export const postsApi = createApi({
       //query: name => `pokemon/${name}`,
       query: () => `posts`,
     }),
+    getPostFromRTKById: builder.query<IPost, string | number>({
+      query: postId => `posts/${postId}`,
+    }),
   }),
 });
 
-export const { useGetPostsFromRTKQuery } = postsApi;
+export const { useGetPostsFromRTKQuery, useGetPostFromRTKByIdQuery } = postsApi;
